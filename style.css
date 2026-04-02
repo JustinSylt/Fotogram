@@ -1,0 +1,52 @@
+/* color variables */
+:root {
+	--header-footer-bg: #09212a;
+	--main-bg: #06171e;
+	--text-color: #ffffff;
+}
+
+/* fonts */
+
+@font-face {
+	font-family: 'Raleway';
+	src: url('./assets/fonts/Raleway-Medium.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* body settings (100vh without header/footer) */
+
+body {
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	min-height: 100vh;
+	font-family: 'Raleway', sans-serif;
+	color: var(--text-color);
+}
+
+/* header/main/footer settings */
+/* header */
+header {
+	display: flex;
+	align-items: center;
+	padding: 0px 128px;
+	gap: 16px;
+	height: 64px;
+	background-color: var(--header-footer-bg);
+}
+
+.header-logo {
+	height: 40px;
+	width: 40px;
+}
+
+main {
+	flex: 1;
+	background-color: var(--main-bg);
+}
+
+footer {
+	height: 80px;
+	background-color: var(--header-footer-bg);
+}
