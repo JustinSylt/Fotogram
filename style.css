@@ -14,6 +14,14 @@
 	font-style: normal;
 }
 
+h1 {
+	margin: 0;
+}
+
+.title {
+	margin-bottom: 16px;
+}
+
 /* body settings (100vh without header/footer) */
 
 body {
@@ -40,6 +48,7 @@ header {
 	height: 100%;
 	color: white;
 	text-decoration: none;
+	width: fit-content;
 }
 
 .header-logo {
@@ -54,6 +63,7 @@ main {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	gap: 12px;
 	flex: 1;
 	background-color: var(--main-bg);
 }
@@ -62,12 +72,24 @@ main {
 	object-fit: cover;
 	height: 196px;
 	width: 196px;
+	margin: 8px;
+	border-radius: 16px;
+	cursor: pointer;
+	transition: transform 0.2s ease;
+}
+
+.gallery-images:hover {
+	transform: scale(1.08);
+}
+
+.gallery-images:active {
+	transform: scale(1);
 }
 
 .all-images-section {
 	display: grid;
 	max-width: 1440px;
-	grid-template-columns: repeat(5, 1fr);
+	grid-template-columns: repeat(4, 1fr);
 }
 
 footer {

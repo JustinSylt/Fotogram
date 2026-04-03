@@ -2,12 +2,10 @@ const ARRAY_OF_IMAGES = [
 	'black_cat.jpg',
 	'deer.jpg',
 	'dog_in_snow.jpg',
-	'eagle.jpg',
 	'gecko.jpg',
 	'iceland_polarlights.jpg',
 	'iceland_waterfalls.jpg',
 	'kitten.jpg',
-	'mountain_skyline.jpg',
 	'penguin.jpg',
 ];
 
