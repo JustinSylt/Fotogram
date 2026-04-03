@@ -98,3 +98,13 @@ main {
 }
 
 /* Dialog styling */
+
+.slideshow-dialog {
+	background-color: var(--main-bg);
+	border: 0px;
+	border-radius: 12px;
+}
+
+.slideshow-dialog::backdrop {
+	background-color: #73737339;
+}
