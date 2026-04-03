@@ -18,7 +18,7 @@
 			type="image/x-icon" />
 	</head>
 	<body>
-		<header>
+		<header class="page-heading">
 			<a
 				href="/index.html"
 				class="header-home-link"
@@ -31,10 +31,21 @@
 		</header>
 		<main>
 			<h1 class="title">Foto Gallery</h1>
+
+			<dialog id="img-dialog">
+				<header
+					class=""
+					id="dialog-header"></header>
+				<section id="dialog-img-container"></section>
+				<footer>
+					<button onclick="closeDialog()">Schließen</button>
+				</footer>
+			</dialog>
+
 			<section
 				id="image-container"
 				class="all-images-section"></section>
 		</main>
-		<footer></footer>
+		<footer id="page-footer"></footer>
 	</body>
 </html>

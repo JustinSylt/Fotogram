@@ -35,7 +35,7 @@ body {
 
 /* header/main/footer settings */
 /* header */
-header {
+.page-heading {
 	padding: 0px 240px;
 	height: 64px;
 	background-color: var(--header-footer-bg);
@@ -92,7 +92,9 @@ main {
 	grid-template-columns: repeat(4, 1fr);
 }
 
-footer {
+.page-footer {
 	height: 80px;
 	background-color: var(--header-footer-bg);
 }
+
+/* Dialog styling */
