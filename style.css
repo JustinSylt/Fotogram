@@ -47,10 +47,18 @@ header {
 	width: 40px;
 }
 
+/* main part / images */
+
 main {
 	flex: 1;
 	background-color: var(--main-bg);
 	padding: 0px 240px;
+}
+
+.gallery-images {
+	object-fit: cover;
+	height: 256px;
+	width: 256px;
 }
 
 footer {
