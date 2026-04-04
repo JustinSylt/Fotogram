@@ -108,3 +108,10 @@ main {
 .slideshow-dialog::backdrop {
 	background-color: #73737339;
 }
+
+.single-dialog-img {
+	object-fit: cover;
+	border-radius: 12px;
+	width: 256px;
+	height: 256px;
+}

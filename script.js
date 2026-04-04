@@ -13,16 +13,24 @@ const ARRAY_OF_IMAGES = [
 function renderAllImages(images) {
 	let imageContainerRef = document.getElementById('image-container');
 	for (i = 0; i < images.length; i++) {
-		imageContainerRef.innerHTML += `<img class="gallery-images" src="./assets/img/${images[i]}" onclick='openDialog()'></img>`;
+		imageContainerRef.innerHTML += `<img class="gallery-images" src="./assets/img/${images[i]}" onclick='openDialog(event)'></img>`;
 	}
 }
 
 renderAllImages(ARRAY_OF_IMAGES);
 
-//function that renders a single image inside of a dialog
-function openDialog() {
+//function that opens dialog and calls image render
+function openDialog(event) {
+	let imageSource = event.target.src.split('/').pop();
 	let dialogRef = document.getElementById('img-dialog');
+	renderImageInDialog(imageSource);
 	dialogRef.showModal();
+}
+
+//function that renders a single image inside of a dialog
+function renderImageInDialog(src) {
+	let dialogImgContainerRef = document.getElementById('dialog-img-container');
+	dialogImgContainerRef.innerHTML = `<img class='single-dialog-img' src='./assets/img/${src}'></img>`;
 }
 
 //close Dialog function
