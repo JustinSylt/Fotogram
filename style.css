@@ -115,3 +115,60 @@ main {
 	width: 256px;
 	height: 256px;
 }
+
+.single-dialog-img-container {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
+.openDialogTitle {
+	color: white;
+}
+
+#dialog-header {
+	color: white;
+}
+
+.arrow-icon {
+	width: 48px;
+	height: 48px;
+	cursor: pointer;
+	transition: transform 0.2s ease;
+}
+
+.arrow-icon:hover {
+	transform: scale(1.08);
+}
+
+.arrow-icon:active {
+	transform: scale(0.9);
+}
+
+.open {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 12px;
+}
+
+/* close Dialog button */
+
+.close-button {
+	background-color: rgba(168, 45, 0, 0.801);
+	color: white;
+	border: 0px;
+	padding: 4px 12px;
+	cursor: pointer;
+	border-radius: 4px;
+	transition: transform 0.2s ease;
+}
+
+.close-button:hover {
+	background-color: rgba(200, 53, 0, 0.801);
+}
+
+.close-button:active {
+	transform: scale(0.9);
+}
