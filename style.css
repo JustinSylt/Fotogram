@@ -83,7 +83,7 @@ main {
 }
 
 .gallery-images:active {
-	transform: scale(1);
+	transform: scale(0.9);
 }
 
 .all-images-section {
