@@ -1,0 +1,53 @@
+@font-face {
+	font-family: 'Raleway';
+	src: url('../assets/fonts/Raleway-Medium.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+:root {
+	--header-and-footer-bg: #09212a;
+	--main-bg: #06171e;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	background-color: var(--header-and-footer-bg);
+	height: 64px;
+	padding: 0px 256px;
+}
+
+.header-logo {
+	width: 200px;
+	height: 40px;
+}
+
+.small-header-logo {
+	height: 40px;
+	width: 40px;
+}
+
+.small-header-home-link {
+	display: none;
+}
+
+@media (max-width: 1200px) {
+	.header {
+		padding: 0px 128px;
+	}
+}
+
+@media (max-width: 600px) {
+	.header {
+		padding: 0px 32px;
+	}
+
+	.small-header-home-link {
+		display: block;
+	}
+
+	.header-home-link {
+		display: none;
+	}
+}
