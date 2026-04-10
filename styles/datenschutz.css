@@ -1,38 +1,38 @@
 @font-face {
-	font-family: 'Raleway';
-	src: url('../assets/fonts/Raleway-Medium.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'Raleway';
+  src: url('../assets/fonts/Raleway-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 :root {
-	--header-and-footer-bg: #09212a;
-	--main-bg: #06171e;
+  --header-and-footer-bg: #09212a;
+  --main-bg: #06171e;
 }
 
 body {
-	margin: 0;
-	font-family: 'Raleway', sans-serif;
-	color: white;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .main-section {
-	flex: 1;
-	background-color: var(--main-bg);
-	padding: 32px 256px;
+  flex: 1;
+  background-color: var(--main-bg);
+  padding: 32px 256px;
 }
 
 @media (max-width: 1000px) {
-	.main-section {
-		padding: 32px 128px;
-	}
+  .main-section {
+    padding: 32px 128px;
+  }
 }
 
 @media (max-width: 600px) {
-	.main-section {
-		padding: 32px;
-	}
+  .main-section {
+    padding: 32px;
+  }
 }

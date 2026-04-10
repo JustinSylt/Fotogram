@@ -1,170 +1,170 @@
 /* General settings */
 
 @font-face {
-	font-family: 'Raleway';
-	src: url('../assets/fonts/Raleway-Medium.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'Raleway';
+  src: url('../assets/fonts/Raleway-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 h1 {
-	margin: 0;
-	text-align: center;
+  margin: 0;
+  text-align: center;
 }
 
 :root {
-	--header-and-footer-bg: #09212a;
-	--main-bg: #06171e;
+  --header-and-footer-bg: #09212a;
+  --main-bg: #06171e;
 }
 
 body {
-	margin: 0;
-	font-family: 'Raleway', sans-serif;
-	color: white;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* main section styling */
 
 .main-section {
-	background-color: var(--main-bg);
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 32px 32px;
-	gap: 32px;
+  background-color: var(--main-bg);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 32px;
+  gap: 32px;
 }
 
 .gallery-img {
-	border-radius: 12px;
-	object-fit: cover;
-	width: 200px;
-	height: 200px;
-	cursor: pointer;
-	transition: transform 0.1s ease-in;
+  border-radius: 12px;
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+  transition: transform 0.1s ease-in;
 }
 
 .gallery-img:hover {
-	transform: scale(1.08);
+  transform: scale(1.08);
 }
 
 .gallery-img:active {
-	transform: scale(0.9);
+  transform: scale(0.9);
 }
 
 .all-images-container {
-	max-width: 1440px;
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+  max-width: 1440px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .figure {
-	margin: 0;
-	height: 200px;
-	padding: 8px;
+  margin: 0;
+  height: 200px;
+  padding: 8px;
 }
 
 /* dialog styling */
 .dialog-img {
-	object-fit: cover;
-	width: 250px;
-	height: 250px;
+  object-fit: cover;
+  width: 250px;
+  height: 250px;
 }
 
 .dialog {
-	border: 0;
-	border-radius: 12px;
-	background-color: var(--header-and-footer-bg);
-	color: white;
-	text-align: center;
+  border: 0;
+  border-radius: 12px;
+  background-color: var(--header-and-footer-bg);
+  color: white;
+  text-align: center;
 }
 
 .dialog::backdrop {
-	background-color: #06171e66;
+  background-color: #06171e66;
 }
 
 .arrow-container {
-	padding: 16px 0px;
-	display: flex;
-	justify-content: space-around;
+  padding: 16px 0px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .dialog-arrow {
-	cursor: pointer;
-	width: 40px;
-	height: 40px;
-	transition: transform 0.2s ease;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  transition: transform 0.2s ease;
 }
 
 .dialog-arrow:hover {
-	transform: scale(1.08);
+  transform: scale(1.08);
 }
 
 .dialog-arrow:active {
-	transform: scale(0.9);
+  transform: scale(0.9);
 }
 
 .dialog-button {
-	border: 0;
-	color: white;
-	background-color: orangered;
-	cursor: pointer;
-	padding: 4px 16px;
-	border-radius: 4px;
-	transition: all 0.2s;
+  border: 0;
+  color: white;
+  background-color: orangered;
+  cursor: pointer;
+  padding: 4px 16px;
+  border-radius: 4px;
+  transition: all 0.2s;
 }
 
 .dialog-button:hover {
-	background-color: rgb(172, 46, 0);
+  background-color: rgb(172, 46, 0);
 }
 
 .dialog-button:active {
-	background-color: orangered;
+  background-color: orangered;
 }
 
 /* responsiveness */
 
 @media (max-width: 1000px) {
-	.all-images-container {
-		grid-template-columns: repeat(2, 1fr);
-	}
+  .all-images-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 600px) {
-	.figure,
-	.gallery-img {
-		height: 150px;
-		width: 150px;
-	}
+  .figure,
+  .gallery-img {
+    height: 150px;
+    width: 150px;
+  }
 
-	.dialog-img {
-		width: 150px;
-		height: 150px;
-	}
+  .dialog-img {
+    width: 150px;
+    height: 150px;
+  }
 
-	.dialog-figure {
-		display: flex;
-		width: 150px;
-		height: 150px;
-		flex-direction: column;
-	}
+  .dialog-figure {
+    display: flex;
+    width: 150px;
+    height: 150px;
+    flex-direction: column;
+  }
 
-	.dialog-figcaption {
-		display: none;
-	}
+  .dialog-figcaption {
+    display: none;
+  }
 
-	.arrow-container {
-		justify-content: space-between;
-	}
+  .arrow-container {
+    justify-content: space-between;
+  }
 }
 
 @media (max-width: 400px) {
-	.figure,
-	.gallery-img {
-		height: 128px;
-		width: 128px;
-	}
+  .figure,
+  .gallery-img {
+    height: 128px;
+    width: 128px;
+  }
 }

@@ -1,29 +1,29 @@
 /* footer section styling */
 
 .footer {
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
-	background-color: var(--header-and-footer-bg);
-	height: 80px;
-	padding: 0px 256px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--header-and-footer-bg);
+  height: 80px;
+  padding: 0px 256px;
 }
 
 .footer-link {
-	color: white;
-	text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 /* responsiveness footer */
 
 @media (max-width: 1200px) {
-	.footer {
-		padding: 0px 128px;
-	}
+  .footer {
+    padding: 0px 128px;
+  }
 }
 
 @media (max-width: 600px) {
-	.footer {
-		padding: 0px 32px;
-	}
+  .footer {
+    padding: 0px 32px;
+  }
 }
