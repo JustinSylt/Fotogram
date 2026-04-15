@@ -21,7 +21,7 @@ function renderAllImages(images) {
     const img = document.createElement('img');
     const figure = document.createElement('figure');
 
-    img.src = `../assets/img/${images[i]}`;
+    img.src = `./assets/img/${images[i]}`;
     img.classList.add('gallery-img');
     img.setAttribute('tabindex', 0);
     figure.classList.add('figure');
