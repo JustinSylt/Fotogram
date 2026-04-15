@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -34,6 +34,7 @@
       <a
         href="./index.html"
         class="header-home-link"
+        aria-label="Fotogram Startseite"
         ><img
           src="./assets/icons/logo.png"
           alt="logo"
@@ -43,6 +44,7 @@
       <a
         href="./index.html"
         class="small-header-home-link"
+        aria-hidden="true"
       >
         <img
           src="./assets/icons/logo_small.png"
@@ -56,10 +58,13 @@
       <div
         id="all-images-container"
         class="all-images-container"
+        role="list" 
+        aria-label="Fotogalerie"></div>
       ></div>
       <dialog
         id="dialog"
         class="dialog"
+        aria-labelledby="dialog-image-caption"
       >
         <p id="dialog-image-caption"></p>
         <img
@@ -73,7 +78,9 @@
             onclick="slideLeftImage()"
             onkeydown="handleArrowKey(event, slideLeftImage)"
             src="./assets/icons/left-arrow.png"
-            alt="left arrow image"
+            alt=""
+            aria-label="Vorheriges Bild"
+            role="button"
             class="dialog-arrow"
             tabindex="0"
           />
@@ -81,7 +88,9 @@
             onclick="slideRightImage()"
             onkeydown="handleArrowKey(event, slideRightImage)"
             src="./assets/icons/right-arrow.png"
-            alt="right arrow image"
+            alt=""
+            role="button"
+            aria-label="Nächstes Bild"
             class="dialog-arrow"
             tabindex="0"
           />
@@ -89,6 +98,7 @@
         <button
           onclick="closeDialog()"
           class="dialog-button"
+          aria-label="Dialog schließen"
         >
           close
         </button>
