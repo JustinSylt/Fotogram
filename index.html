@@ -71,15 +71,19 @@
         <div class="arrow-container">
           <img
             onclick="slideLeftImage()"
+            onkeydown="handleArrowKey(event, slideLeftImage)"
             src="./assets/icons/left-arrow.png"
             alt="left arrow image"
             class="dialog-arrow"
+            tabindex="0"
           />
           <img
             onclick="slideRightImage()"
+            onkeydown="handleArrowKey(event, slideRightImage)"
             src="./assets/icons/right-arrow.png"
             alt="right arrow image"
             class="dialog-arrow"
+            tabindex="0"
           />
         </div>
         <button
