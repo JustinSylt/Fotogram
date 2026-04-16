@@ -56,6 +56,7 @@ document.getElementById('dialog').addEventListener('click', handleDialogClick);
 // function that opens the dialog and calls render function for the dialog image
 function openDialog(event) {
   let imageName = event.target.src.split('/').pop();
+  currentImageIndex = ARRAY_OF_IMAGES.indexOf(imageName);
   let dialogRef = document.getElementById('dialog');
   dialogRef.classList.add('open');
   renderDialog(imageName);
