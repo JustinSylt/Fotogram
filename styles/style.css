@@ -137,6 +137,11 @@ body {
 #current-image-index {
   font-variant-numeric: lining-nums;
 }
+
+.dialog-arrow-button {
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+}
 /* responsiveness */
 
 @media (max-width: 1000px) {

@@ -88,27 +88,29 @@
             alt=""
           />
           <div class="arrow-container">
-            <img
+            <button
               onclick="slideLeftImage()"
-              onkeydown="handleArrowKey(event, slideLeftImage)"
-              src="./assets/icons/left-arrow.png"
-              alt=""
-              aria-label="Vorheriges Bild"
-              role="button"
-              class="dialog-arrow"
-              tabindex="0"
-            />
+              class="dialog-arrow-button"
+            >
+              <img
+                src="./assets/icons/left-arrow.png"
+                alt=""
+                aria-label="Vorheriges Bild"
+                class="dialog-arrow"
+              />
+            </button>
             <p id="current-image-index"></p>
-            <img
+            <button
               onclick="slideRightImage()"
-              onkeydown="handleArrowKey(event, slideRightImage)"
-              src="./assets/icons/right-arrow.png"
-              alt=""
-              role="button"
-              aria-label="Nächstes Bild"
-              class="dialog-arrow"
-              tabindex="0"
-            />
+              class="dialog-arrow-button"
+            >
+              <img
+                src="./assets/icons/right-arrow.png"
+                alt=""
+                aria-label="Nächstes Bild"
+                class="dialog-arrow"
+              />
+            </button>
           </div>
         </div>
       </dialog>
