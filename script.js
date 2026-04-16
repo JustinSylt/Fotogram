@@ -22,11 +22,16 @@ const ARRAY_OF_IMAGES = [
   },
 ];
 
-// initialize functions
-renderAllImages(ARRAY_OF_IMAGES);
-
 // count of array index
 let currentImageIndex = 0;
+
+// initialize application
+function init() {
+  renderAllImages(ARRAY_OF_IMAGES);
+  document
+    .getElementById('dialog')
+    .addEventListener('click', handleDialogClick);
+}
 
 // function that renders all images on screen
 function renderAllImages(images) {
@@ -39,7 +44,6 @@ function renderAllImages(images) {
 
 //function that only creates figure and events for dialog
 function createGalleryFigure(image) {
-  // !!! appendChild sollte nicht benutzt werden, aber es wurde gesagt fuer dieses Projekt jetzt noch in Ordnung
   const figure = document.createElement('figure');
   figure.classList.add('figure');
   figure.appendChild(createGalleryImage(image));
@@ -50,7 +54,6 @@ function createGalleryFigure(image) {
 
 // function that only applies image to figure
 function createGalleryImage(image) {
-  // !!! appendChild sollte nicht benutzt werden, aber es wurde gesagt fuer dieses Projekt jetzt noch in Ordnung
   const img = document.createElement('img');
   img.alt = `${image.alternative}`;
   img.src = `./assets/img/${image.source}`;
@@ -66,8 +69,6 @@ function handleFigureKeydown(event) {
     openDialog(event);
   }
 }
-
-document.getElementById('dialog').addEventListener('click', handleDialogClick);
 
 // function that opens the dialog and calls render function for the dialog image
 function openDialog(event) {
@@ -104,6 +105,7 @@ function renderImageIndex() {
   pTagIndexRef.innerHTML = `${currentImageIndex + 1} / ${ARRAY_OF_IMAGES.length}`;
 }
 
+// function that closes dialog on backdrop click
 function handleDialogClick(event) {
   const dialogRef = document.getElementById('dialog');
   if (event.target === dialogRef) {
@@ -111,17 +113,20 @@ function handleDialogClick(event) {
   }
 }
 
+// function that slides to the previous image
 function slideLeftImage() {
   currentImageIndex =
     (currentImageIndex - 1 + ARRAY_OF_IMAGES.length) % ARRAY_OF_IMAGES.length;
   renderDialog(ARRAY_OF_IMAGES[currentImageIndex]);
 }
 
+// function that slides to the next image
 function slideRightImage() {
   currentImageIndex = (currentImageIndex + 1) % ARRAY_OF_IMAGES.length;
   renderDialog(ARRAY_OF_IMAGES[currentImageIndex]);
 }
 
+// event handler for arrow key navigation
 function handleArrowKey(event, action) {
   if (event.key === 'Enter' || event.key === ' ') {
     event.preventDefault();
