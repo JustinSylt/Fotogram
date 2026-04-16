@@ -79,7 +79,7 @@ body {
   border-radius: 12px;
   width: 600px;
   height: 600px;
-  background-color: var(--header-and-footer-bg);
+  background: var(--header-and-footer-bg);
   color: white;
   text-align: center;
 }

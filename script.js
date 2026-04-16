@@ -51,6 +51,8 @@ function handleFigureKeydown(event) {
 
 renderAllImages(ARRAY_OF_IMAGES);
 
+document.getElementById('dialog').addEventListener('click', handleDialogClick);
+
 // function that opens the dialog and calls render function for the dialog image
 function openDialog(event) {
   let imageName = event.target.src.split('/').pop();
@@ -81,6 +83,13 @@ function renderDialog(imageName) {
 function renderImageIndex() {
   let pTagIndexRef = document.getElementById('current-image-index');
   pTagIndexRef.innerHTML = `${currentImageIndex + 1} / ${ARRAY_OF_IMAGES.length}`;
+}
+
+function handleDialogClick(event) {
+  const dialogRef = document.getElementById('dialog');
+  if (event.target === dialogRef) {
+    closeDialog();
+  }
 }
 
 function slideLeftImage() {
