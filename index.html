@@ -66,7 +66,20 @@
         class="dialog"
         aria-labelledby="dialog-image-caption"
       >
-        <p id="dialog-image-caption"></p>
+        <div class="dialog-header">
+          <span
+            class="dialog-header-spacer"
+            aria-hidden="true"
+          ></span>
+          <p id="dialog-image-caption"></p>
+          <button
+            onclick="closeDialog()"
+            class="dialog-button"
+            aria-label="Dialog schließen"
+          >
+            X
+          </button>
+        </div>
         <img
           id="dialog-img"
           class="dialog-img"
@@ -84,6 +97,7 @@
             class="dialog-arrow"
             tabindex="0"
           />
+          <p id="current-image-index"></p>
           <img
             onclick="slideRightImage()"
             onkeydown="handleArrowKey(event, slideRightImage)"
@@ -95,13 +109,6 @@
             tabindex="0"
           />
         </div>
-        <button
-          onclick="closeDialog()"
-          class="dialog-button"
-          aria-label="Dialog schließen"
-        >
-          close
-        </button>
       </dialog>
     </main>
     <footer class="footer">
@@ -110,6 +117,14 @@
         class="footer-link"
         >Datenschutz</a
       >
+      <div class="footer-logo-container">
+        <img
+          src="./assets/icons/DALogo.png"
+          alt="Developer Academy Logo"
+          class="footer-logo"
+        />
+        <p class="copyright-tag">&copy; 2026 Justin Dohmen</p>
+      </div>
       <a
         href="./pages/impressum.html"
         class="footer-link"

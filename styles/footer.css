@@ -14,6 +14,24 @@
   text-decoration: none;
 }
 
+.footer-logo {
+  height: 24px;
+  width: 96px;
+}
+
+.footer-logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.copyright-tag {
+  margin: 0;
+  color: rgb(196, 196, 196);
+  font-size: 12px;
+}
+
 /* responsiveness footer */
 
 @media (max-width: 1200px) {
@@ -25,5 +43,9 @@
 @media (max-width: 600px) {
   .footer {
     padding: 0px 32px;
+  }
+
+  .footer-link {
+    display: none;
   }
 }

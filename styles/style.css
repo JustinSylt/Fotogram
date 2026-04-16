@@ -107,24 +107,34 @@ body {
   transform: scale(0.9);
 }
 
+.dialog-header #dialog-image-caption {
+  margin: 0;
+  grid-column: 2;
+}
+.dialog-header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
 .dialog-button {
-  border: 0;
+  grid-column: 3;
+  justify-self: end;
   color: white;
-  background-color: orangered;
-  cursor: pointer;
-  padding: 4px 16px;
-  border-radius: 4px;
-  transition: all 0.2s;
+  background-color: rgba(255, 255, 255, 0);
+  border: 0px;
+  font-size: 16px;
 }
 
 .dialog-button:hover {
-  background-color: rgb(172, 46, 0);
+  cursor: pointer;
 }
 
-.dialog-button:active {
-  background-color: orangered;
+#current-image-index {
+  font-variant-numeric: lining-nums;
 }
-
 /* responsiveness */
 
 @media (max-width: 1000px) {

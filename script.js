@@ -63,16 +63,23 @@ function renderDialog(imageName) {
   dialogImageCaptionRef.innerHTML = `${imageCaptionName}`;
   dialogImageRef.src = `./assets/img/${imageName}`;
   dialogImageRef.alt = `${imageCaptionName}`;
+  renderImageIndex();
+}
+
+// function that renders dialog image index
+function renderImageIndex() {
+  let pTagIndexRef = document.getElementById('current-image-index');
+  pTagIndexRef.innerHTML = `${currentImageIndex + 1} / ${ARRAY_OF_IMAGES.length}`;
 }
 
 function slideLeftImage() {
-  currentImageIndex = (currentImageIndex + 1) % ARRAY_OF_IMAGES.length;
+  currentImageIndex =
+    (currentImageIndex - 1 + ARRAY_OF_IMAGES.length) % ARRAY_OF_IMAGES.length;
   renderDialog(ARRAY_OF_IMAGES[currentImageIndex]);
 }
 
 function slideRightImage() {
-  currentImageIndex =
-    (currentImageIndex - 1 + ARRAY_OF_IMAGES.length) % ARRAY_OF_IMAGES.length;
+  currentImageIndex = (currentImageIndex + 1) % ARRAY_OF_IMAGES.length;
   renderDialog(ARRAY_OF_IMAGES[currentImageIndex]);
 }
 
