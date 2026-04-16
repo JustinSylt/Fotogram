@@ -16,28 +16,39 @@ let currentImageIndex = 0;
 // function that renders all images on screen
 function renderAllImages(images) {
   let imageContainerRef = document.getElementById('all-images-container');
-
   for (let i = 0; i < images.length; i++) {
-    const img = document.createElement('img');
-    const figure = document.createElement('figure');
-
-    img.src = `./assets/img/${images[i]}`;
-    img.classList.add('gallery-img');
-    img.setAttribute('tabindex', 0);
-    figure.classList.add('figure');
-    figure.addEventListener('click', (event) => {
-      openDialog(event);
-    });
-    figure.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        openDialog(event);
-      }
-    });
-    figure.appendChild(img);
+    const figure = createGalleryFigure(images[i]);
     imageContainerRef.appendChild(figure);
   }
 }
+
+//function that only creates figure and events for dialog
+function createGalleryFigure(imageName) {
+  const figure = document.createElement('figure');
+  figure.classList.add('figure');
+  figure.appendChild(createGalleryImage(imageName));
+  figure.addEventListener('click', openDialog);
+  figure.addEventListener('keydown', handleFigureKeydown);
+  return figure;
+}
+
+// function that only applies image to figure
+function createGalleryImage(imageName) {
+  const img = document.createElement('img');
+  img.src = `./assets/img/${imageName}`;
+  img.classList.add('gallery-img');
+  img.setAttribute('tabindex', 0);
+  return img;
+}
+
+// event handler for pressing enter to open dialog
+function handleFigureKeydown(event) {
+  if (event.key === 'Enter' || event.key === ' ') {
+    event.preventDefault();
+    openDialog(event);
+  }
+}
+
 renderAllImages(ARRAY_OF_IMAGES);
 
 // function that opens the dialog and calls render function for the dialog image
