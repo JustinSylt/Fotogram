@@ -1,14 +1,29 @@
-// name list of all images
+// object list of all images and their alternative texts
 const ARRAY_OF_IMAGES = [
-  'black_cat.jpg',
-  'deer.jpg',
-  'dog_in_snow.jpg',
-  'eagle.jpg',
-  'gecko.jpg',
-  'kitten.jpg',
-  'penguin.jpg',
-  'iceland_waterfalls.jpg',
+  { source: 'black_cat.jpg', alternative: 'pciture of a black cat' },
+  { source: 'deer.jpg', alternative: 'picture of a deer' },
+  {
+    source: 'dog_in_snow.jpg',
+    alternative: 'picture of a dog jumping in the snow',
+  },
+  {
+    source: 'eagle.jpg',
+    alternative: 'picture of an eagle starring into the camera',
+  },
+  { source: 'gecko.jpg', alternative: 'pciture of a gecko' },
+  {
+    source: 'kitten.jpg',
+    alternative: 'picture of a kitten sitting inside of a basket',
+  },
+  { source: 'penguin.jpg', alternative: 'picture of two penguins' },
+  {
+    source: 'iceland_waterfalls.jpg',
+    alternative: 'picture of a beautiful waterfall',
+  },
 ];
+
+// initialize functions
+renderAllImages(ARRAY_OF_IMAGES);
 
 // count of array index
 let currentImageIndex = 0;
@@ -23,19 +38,22 @@ function renderAllImages(images) {
 }
 
 //function that only creates figure and events for dialog
-function createGalleryFigure(imageName) {
+function createGalleryFigure(image) {
+  // !!! appendChild sollte nicht benutzt werden, aber es wurde gesagt fuer dieses Projekt jetzt noch in Ordnung
   const figure = document.createElement('figure');
   figure.classList.add('figure');
-  figure.appendChild(createGalleryImage(imageName));
+  figure.appendChild(createGalleryImage(image));
   figure.addEventListener('click', openDialog);
   figure.addEventListener('keydown', handleFigureKeydown);
   return figure;
 }
 
 // function that only applies image to figure
-function createGalleryImage(imageName) {
+function createGalleryImage(image) {
+  // !!! appendChild sollte nicht benutzt werden, aber es wurde gesagt fuer dieses Projekt jetzt noch in Ordnung
   const img = document.createElement('img');
-  img.src = `./assets/img/${imageName}`;
+  img.alt = `${image.alternative}`;
+  img.src = `./assets/img/${image.source}`;
   img.classList.add('gallery-img');
   img.setAttribute('tabindex', 0);
   return img;
@@ -49,17 +67,17 @@ function handleFigureKeydown(event) {
   }
 }
 
-renderAllImages(ARRAY_OF_IMAGES);
-
 document.getElementById('dialog').addEventListener('click', handleDialogClick);
 
 // function that opens the dialog and calls render function for the dialog image
 function openDialog(event) {
   let imageName = event.target.src.split('/').pop();
-  currentImageIndex = ARRAY_OF_IMAGES.indexOf(imageName);
+  currentImageIndex = ARRAY_OF_IMAGES.findIndex(
+    (img) => img.source === imageName,
+  );
   let dialogRef = document.getElementById('dialog');
   dialogRef.classList.add('open');
-  renderDialog(imageName);
+  renderDialog(ARRAY_OF_IMAGES[currentImageIndex]);
   dialogRef.showModal();
 }
 
@@ -70,13 +88,13 @@ function closeDialog() {
 }
 
 // function that renders image inside of the dialog
-function renderDialog(imageName) {
+function renderDialog(image) {
   let dialogImageRef = document.getElementById('dialog-img');
   let dialogImageCaptionRef = document.getElementById('dialog-image-caption');
-  let imageCaptionName = splitImageName(imageName);
+  let imageCaptionName = splitImageName(image.source);
   dialogImageCaptionRef.innerHTML = `${imageCaptionName}`;
-  dialogImageRef.src = `./assets/img/${imageName}`;
-  dialogImageRef.alt = `${imageCaptionName}`;
+  dialogImageRef.src = `./assets/img/${image.source}`;
+  dialogImageRef.alt = image.alternative;
   renderImageIndex();
 }
 
